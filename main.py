@@ -19,6 +19,13 @@ print(provinces)
 game_is_on = True
 
 while game_is_on:
+    if len(guessed_provinces) == number_of_provinces:
+        t = Turtle()
+        t.hideturtle()
+        t.penup()
+        t.goto(-100, 350)
+        t.write("WELL DONE!", font=('Arial', 32, 'normal'))
+        break
     answer = screen.textinput(title=f"{len(guessed_provinces)}/{number_of_provinces} Provinces Correct",
                               prompt="What province you know?").lower()
     if answer == "stop":
